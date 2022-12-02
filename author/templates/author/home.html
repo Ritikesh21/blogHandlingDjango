@@ -1,0 +1,14 @@
+{% extends 'author/base.html'%}
+
+{% block body %}
+
+    {% for a in author %}
+        <p>
+            <a href="{% url 'profile' a.id%}">{{a.firstName}}</a>
+            <a href="{% url 'update' a.id %}">Update</a>
+            <a href="{% url 'delete' a.id %}">Delete</a>
+        </p>
+    {% endfor %}
+    <a href="{% url 'register' %}">Register</a>
+    
+{% endblock %}
